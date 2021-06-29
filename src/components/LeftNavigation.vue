@@ -80,10 +80,26 @@ import store from "../store";
 
 export default {
   name: "LeftNavigation",
+  computed: {
+    sortingMethod: {
+      get() {
+        return this.$store.getters.getSortingMethod;
+      },
+      set(value) {
+        this.$store.commit("setSortingMethod", value);
+      },
+    },
+    sortingSpeed: {
+      get() {
+        return this.$store.getters.getSortingSpeed;
+      },
+      set(value) {
+        this.$store.commit("setSortingSpeed", value);
+      },
+    },
+  },
   data() {
     return {
-      sortingMethod: "selection",
-      sortingSpeed: 1,
       lengthOfArray: 5,
     };
   },
@@ -104,8 +120,8 @@ export default {
   width: 40vh;
   box-shadow: 0 3px 6px rgb(57 63 72 / 30%);
   height: 100vh;
-  position: fixed;
-  z-index: 3;
+  /* position: fixed;
+  z-index: 3; */
 }
 
 .section {

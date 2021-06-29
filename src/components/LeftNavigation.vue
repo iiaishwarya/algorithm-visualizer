@@ -76,6 +76,8 @@
 
 <script>
 import { generateArray } from "../helpers/generateArray";
+import store from "../store";
+
 export default {
   name: "LeftNavigation",
   data() {
@@ -85,10 +87,10 @@ export default {
       lengthOfArray: 5,
     };
   },
+  store,
   methods: {
     generateArray: function () {
-      let array = generateArray(this.lengthOfArray);
-      console.log(array);
+      this.$store.commit("updateArr", generateArray(this.lengthOfArray));
     },
   },
 };

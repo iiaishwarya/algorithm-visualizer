@@ -19,7 +19,8 @@ export default {
 
 <style scoped>
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 25% 75%;
   position: relative;
   margin-top: 60px;
 }

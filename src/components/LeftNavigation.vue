@@ -117,11 +117,8 @@ export default {
   padding: 0 20px;
   display: grid;
   grid-template-rows: 30% 15% 55%;
-  width: 40vh;
   box-shadow: 0 3px 6px rgb(57 63 72 / 30%);
   height: 100vh;
-  /* position: fixed;
-  z-index: 3; */
 }
 
 .section {

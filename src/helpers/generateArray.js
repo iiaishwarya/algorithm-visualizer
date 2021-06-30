@@ -1,7 +1,13 @@
 function generateArray(length) {
-  console.log(length);
-  let a = Array.from({ length }, () => Math.floor(Math.random() * 9));
-  return a;
+  const array = [];
+  for (let i = 0; i < length; i++) {
+    array.push(randomIntFromInterval(5, 730));
+  }
+  return array;
+}
+
+function randomIntFromInterval(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 module.exports = {

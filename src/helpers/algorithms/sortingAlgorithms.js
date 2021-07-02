@@ -33,7 +33,7 @@ function insertionSort(arr, index) {
   }
   arr[j + 1] = key;
 
-  return arr;
+  return { arr, j: j + 1 };
 }
 
 module.exports = {

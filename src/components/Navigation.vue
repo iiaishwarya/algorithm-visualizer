@@ -56,9 +56,15 @@ export default {
         case "insertion":
           for (let i = 1; i < this.arr.length; i++) {
             setTimeout(() => {
-              this.$store.commit("updateArr", insertionSort(this.arr, i));
+              let { arr, j } = insertionSort(this.arr, i);
+              this.$store.commit("updateArr", arr);
+              this.$store.commit("updateIndexes", { i, j });
             }, i * 100 * this.$store.getters.getSortingSpeed);
           }
+          setTimeout(() => {
+            this.$store.commit("updateIndexes", { i: -1, j: -1 });
+          }, 100 * this.$store.getters.getSortingSpeed * this.arr.length);
+
           break;
         default:
           console.log("what");

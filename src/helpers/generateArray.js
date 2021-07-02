@@ -1,7 +1,12 @@
 function generateArray(length) {
   const array = [];
-  for (let i = 0; i < length; i++) {
-    array.push(randomIntFromInterval(5, 730));
+  let i = 0;
+  while (i < length) {
+    let item = randomIntFromInterval(5, 730);
+    if (!array.includes(item)) {
+      array.push(item);
+      i += 1;
+    }
   }
   return array;
 }

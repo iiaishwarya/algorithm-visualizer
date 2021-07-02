@@ -1,12 +1,14 @@
 function bubbleSort(arr, index) {
+  let min_index = index;
   for (let i = 0; i < arr.length - index - 1; i++) {
     if (arr[i] > arr[i + 1]) {
+      min_index = i;
       let temp = arr[i];
       arr[i] = arr[i + 1];
       arr[i + 1] = temp;
     }
   }
-  return arr;
+  return { arr, j: min_index };
 }
 
 function selectionSort(arr, index) {
@@ -18,7 +20,7 @@ function selectionSort(arr, index) {
   arr[min_index] = arr[index];
   arr[index] = temp;
 
-  return arr;
+  return { arr, j: min_index };
 }
 
 function insertionSort(arr, index) {

@@ -59,11 +59,10 @@
       <div class="heading">Select number of elements in array</div>
       <div class="inputs">
         <input
-          type="number"
-          step="1"
-          min="5"
-          max="20"
-          id="lengthOfArray"
+          type="range"
+          min="1"
+          max="40 "
+          id="sort-range"
           v-model="lengthOfArray"
         />
       </div>
@@ -106,7 +105,10 @@ export default {
   store,
   methods: {
     generateArray: function () {
-      this.$store.commit("updateArr", generateArray(this.lengthOfArray));
+      let randomArray = generateArray(this.lengthOfArray);
+      this.$store.commit("resetState");
+      this.$store.commit("updateArr", randomArray);
+      this.$store.commit("updateIndexes", { i: -1, j: -1 });
     },
   },
 };

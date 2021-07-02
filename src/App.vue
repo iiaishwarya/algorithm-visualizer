@@ -27,5 +27,6 @@ export default {
 body {
   margin: 0;
   display: flex;
+  overflow-y: hidden;
 }
 </style>

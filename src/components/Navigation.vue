@@ -13,6 +13,7 @@ import {
   bubbleSort,
   selectionSort,
   insertionSort,
+  mergeSort,
 } from "../helpers/algorithms/sortingAlgorithms";
 export default {
   name: "Navigation",
@@ -64,6 +65,10 @@ export default {
           setTimeout(() => {
             this.$store.commit("updateIndexes", { i: -1, j: -1 });
           }, 100 * this.$store.getters.getSortingSpeed * this.arr.length);
+
+          break;
+        case "merge":
+          this.$store.commit("updateArr", mergeSort(this.arr));
 
           break;
         default:
